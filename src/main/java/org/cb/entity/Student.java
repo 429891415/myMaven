@@ -1,5 +1,7 @@
+package org.cb.entity;
+
 public class Student {
-    private int sno;
+    private int id;
     private String name;
     private String password;
 
@@ -11,18 +13,18 @@ public class Student {
         this.password = password;
     }
 
-    public Student(int sno, String name, String password) {
-        this.sno = sno;
+    public Student(int id, String name, String password) {
+        this.id = id;
         this.name = name;
         this.password = password;
     }
 
-    public int getSno() {
-        return sno;
+    public int getId() {
+        return id;
     }
 
-    public void setSno(int sno) {
-        this.sno = sno;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -44,7 +46,7 @@ public class Student {
     @Override
     public String toString() {
         return "Student{" +
-                "sno=" + sno +
+                "id=" + id +
                 ", name='" + name + '\'' +
                 ", password='" + password + '\'' +
                 '}';
