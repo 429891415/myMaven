@@ -14,8 +14,8 @@
         </environment>
     </environments>
     <mappers>
-        <mapper resource="org.cb.mapping/studentMapper.xml" />
-        <mapper resource="org.cb.mapping/personMapper.xml" />
+        <mapper resource="org/cb/mapper/studentMapper.xml" />
+        <mapper resource="org/cb/mapper/personMapper.xml" />
     </mappers>
 
 </configuration>
