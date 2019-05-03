@@ -1,54 +1,60 @@
 package org.cb.entity;
 
 public class Student {
-    private int id;
-    private String name;
-    private String password;
+    private int stuNo;
+    private String stuName;
+    private int stuAge;
+    private String graName;
 
     public Student() {
     }
 
-    public Student(String name, String password) {
-        this.name = name;
-        this.password = password;
+    public Student(int stuNo, String stuName, int stuAge, String graName) {
+        this.stuNo = stuNo;
+        this.stuName = stuName;
+        this.stuAge = stuAge;
+        this.graName = graName;
     }
 
-    public Student(int id, String name, String password) {
-        this.id = id;
-        this.name = name;
-        this.password = password;
+    public int getStuNo() {
+        return stuNo;
     }
 
-    public int getId() {
-        return id;
+    public void setStuNo(int stuNo) {
+        this.stuNo = stuNo;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public String getStuName() {
+        return stuName;
     }
 
-    public String getName() {
-        return name;
+    public void setStuName(String stuName) {
+        this.stuName = stuName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public int getStuAge() {
+        return stuAge;
     }
 
-    public String getPassword() {
-        return password;
+    public void setStuAge(int stuAge) {
+        this.stuAge = stuAge;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public String getGraName() {
+        return graName;
+    }
+
+    public void setGraName(String graName) {
+        this.graName = graName;
     }
 
     @Override
     public String toString() {
         return "Student{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", password='" + password + '\'' +
+                "stuNo=" + stuNo +
+                ", stuName='" + stuName + '\'' +
+                ", stuAge='" + stuAge + '\'' +
+                ", graName='" + graName + '\'' +
                 '}';
     }
 }

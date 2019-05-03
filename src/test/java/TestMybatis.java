@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.io.Reader;
 
 public class TestMybatis {
+
     public static void main(String[] args) throws IOException {
         Reader reader = Resources.getResourceAsReader("conf.xml");
         SqlSessionFactory sessionFactory = new SqlSessionFactoryBuilder().build(reader);

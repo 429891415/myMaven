@@ -16,4 +16,5 @@
     <select id="queryPersonById" parameterType="int" resultType="org.cb.entity.Person">
         select * from person where id = #{id}
     </select>
+    
 </mapper>
