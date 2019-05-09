@@ -4,4 +4,8 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+    <servlet>
+        <servlet-name>QueryStudentServlet</servlet-name>
+        <servlet-class>org.cb.servlet.QueryStudentServlet</servlet-class>
+    </servlet>
 </web-app>
