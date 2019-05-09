@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 为这个mapper指定一个唯一的namespace，namespace的值习惯上设置成包名+sql映射文件名，这样就能够保证namespace的值是唯一的
+例如namespace="org.cb.mapper.StudentMapper"就是org.cb.mapper(包名)+StudentMapper(StudentMapper.xml文件去除后缀)
+ -->
+<mapper namespace="org.cb.mapper.StudentMapper">
+    <!-- 在select标签中编写查询的SQL语句， 设置select标签的id属性为queryStudentById，id属性值必须是唯一的，不能够重复
+    使用parameterType属性指明查询时使用的参数类型，resultType属性指明查询返回的结果集类型
+    resultType="Student"就表示将查询结果封装成一个Student类的对象返回
+    Student类就是Student表所对应的实体类
+    sql语句后不能有多余的分号
+    -->
+    <!--
+        根据id查询得到一个Student对象
+     -->
+    <select id="queryStudentByStuno" parameterType="int" resultType="Student">
+        select * from student where stuno = #{stuno}
+    </select>
+
+    <select id="queryAllStudents" resultType="Student">
+        select * from student
+    </select>
+
+    <insert id="addStudent" parameterType="Student">
+        insert into student values (#{stuNo},#{stuName},#{stuAge},#{graName})
+    </insert>
+
+    <delete id="deleteStudentByStuno" parameterType="int">
+        delete from student where stuno = #{stuNo}
+    </delete>
+    <update id="updateStudentByStuno" parameterType="Student">
+        update student set stuname=#{stuName},stuAge=#{stuAge},graname=#{graName} where stuno=#{stuNo}
+    </update>
+</mapper>
