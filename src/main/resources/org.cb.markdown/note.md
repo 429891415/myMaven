@@ -58,9 +58,11 @@ parameterType，则说明方法没有输入参数)
 	namespace的值 ，就是  接口的全类名（ 接口 - mapper.xml 一一对应）
 
 	
-匹配的过程：（约定的过程）
-1.根据 接口名 找到 mapper.xml文件（根据的是namespace=接口全类名）
-2.根据 接口的方法名 找到 mapper.xml文件中的SQL标签 （方法名=SQL标签Id值）
+#### 匹配的过程：（约定的过程）  
+
++ 根据 接口名 找到 mapper.xml文件（根据的是namespace=接口全类名）  
+
++ 根据 接口的方法名 找到 mapper.xml文件中的SQL标签 （方法名=SQL标签Id值）  
 
 以上2点可以保证： 当我们调用接口中的方法时，
 程序能自动定位到 某一个Mapper.xml文件中的sqL标签
@@ -68,21 +70,19 @@ parameterType，则说明方法没有输入参数)
 
 习惯：SQL映射文件（mapper.xml） 和 接口放在同一个包中 （注意修改conf.xml中加载mapper.xml文件的路径）
 
-
-
- 
 以上，可以通过接口的方法->SQL语句
 
-执行：
-		StudentMapper studentMapper = session.getMapper(StudentMapper.class) ;
-		studentMapper.方法();
+执行：    
+
+	StudentMapper studentMapper = session.getMapper(StudentMapper.class) ;
+	studentMapper.方法();
 
 通过session对象获取接口（session.getMapper(接口.class);），再调用该接口中的方法，程序会自动执行该方法对应的SQL。
 
 
 
-优化
-1.可以将配置信息 单独放入 db.properties文件中，然后再动态引入
+优化  
++ 可以将配置信息 单独放入 db.properties文件中，然后再动态引入
 	
  db.properties：
 	k=v
@@ -93,7 +93,7 @@ parameterType，则说明方法没有输入参数)
 
 引入之后，使用${key}
 
-2.MyBatis全局参数
++ MyBatis全局参数
 在conf.xml中设置
 	<!-- 
 	<settings>
@@ -102,7 +102,7 @@ parameterType，则说明方法没有输入参数)
 	</settings>
  	-->
 
-3.别名 conf.xml
++ 别名 conf.xml
 a.设置单个别名
 
 
@@ -156,7 +156,7 @@ resultMap可以实现2个功能：
 1.类型转换
 2.属性-字段的映射关系
 
-<select id="queryStudentByStuno" 	parameterType="int"  	resultMap="studentMapping" >
+    <select id="queryStudentByStuno" 	parameterType="int"  	resultMap="studentMapping" >
 		select * from student where stuno = #{stuno}
 	</select>
 	
@@ -168,12 +168,8 @@ resultMap可以实现2个功能：
 			<result property="graName"  column="graname" />
 			<result property="stuSex"  column="stusex"  javaType="boolean" jdbcType="INTEGER"/>
 	
-	
 	</resultMap>
 	
-
-focusky
-
 
 
 

@@ -73,8 +73,8 @@ public class TestMybatis {
         queryAllStudent();
 //        addStudent();
 //        updateStudentByStuno();
-        deleteStudentByStuno();
-        queryAllStudent();
+//        deleteStudentByStuno();
+//        queryAllStudent();
 
     }
 }
